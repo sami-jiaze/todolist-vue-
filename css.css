@@ -1,0 +1,50 @@
+
+li{
+  list-style: none;
+  margin-bottom: 20px;
+}
+body{
+  background-color: #cdcdcd;
+}
+.nav{
+  height: 60px;
+  background-color: #323232;
+  color: #ccc;
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+#header,#content{
+  margin-top: 60px;
+  width: 500px;
+  height:60px;
+  margin: auto;
+}
+#header span{
+  font-size: 25px;
+  font-weight: 600;
+  margin-right: 60px;
+}
+.circle{
+  background-color: pink;
+  color: white;
+  text-align: center;
+  line-height: 25px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  float: right;
+}
+
+.doingul{
+  background-color: lightblue;
+}
+.doneul{
+  background-color: lightblue;
+}
+.box{
+  width: 18px;
+  height: 18px;
+}

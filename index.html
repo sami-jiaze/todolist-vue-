@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="nav">TodoList</div>
+
+    <div id="header">
+      <span>添加任务</span>
+      <input type="text" placeholder="todo..." v-model='todoItem.title' @keydown.enter='add'>
+    </div>
+
+    <div id="content">
+      <div class="doingList">
+        <h3>正在进行
+          <div class="circle">{{doingList.length}}</div>
+        </h3>
+        <ul class="doingul">
+          <li v-for='item in doingList'>
+            <input class='box'type="checkbox" @click.prevent='setDone(item)'>
+            <input v-if='item===selItem'type="text" v-model='item.title' @blur='doUpdate'>
+            <span v-else @click='setSel(item)'>{{item.title}}</span>
+            <a style="float: right;" href="javascript:;" @click.prevent='del(item)'>删除</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="doneList">
+        <h3>已完成
+          <div class="circle">{{doneList.length}}</div>
+        </h3>
+        <ul class="doneul">
+          <li v-for='item in doneList'>
+            <input class='box' type="checkbox" @click.prevent='setDoing(item)' check='checked'>
+            <input v-if='item===selItem'type="text" v-model='item.title' @blur='doUpdate'>
+            <span v-else @click='setSel(item)'>{{item.title}}</span>
+            <a style="float: right;" href="javascript:;" @click.prevent='del(item)'>删除</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="js.vue"></script>
+</body>
+
+</html>
